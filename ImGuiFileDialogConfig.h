@@ -1,12 +1,14 @@
 #pragma once
 
+#include <IconsMaterialDesign.h>
+
 // uncomment and modify defines under for customize ImGuiFileDialog
 
 //this options need c++17
-//#define USE_STD_FILESYSTEM
+#define USE_STD_FILESYSTEM
 
-//#define MAX_FILE_DIALOG_NAME_BUFFER 1024
-//#define MAX_PATH_BUFFER_SIZE 1024
+#define MAX_FILE_DIALOG_NAME_BUFFER 1024
+#define MAX_PATH_BUFFER_SIZE 1024
 
 // the slash's buttons in path cna be used for quick select parallles directories
 //#define USE_QUICK_PATH_SELECT
@@ -16,22 +18,22 @@
 // define the space between path buttons 
 //#define CUSTOM_PATH_SPACING 2
 
-//#define USE_THUMBNAILS
+#define USE_THUMBNAILS
 //the thumbnail generation use the stb_image and stb_resize lib who need to define the implementation
 //btw if you already use them in your app, you can have compiler error due to "implemntation found in double"
 //so uncomment these line for prevent the creation of implementation of these libs again
-//#define DONT_DEFINE_AGAIN__STB_IMAGE_IMPLEMENTATION
-//#define DONT_DEFINE_AGAIN__STB_IMAGE_RESIZE_IMPLEMENTATION
+#define DONT_DEFINE_AGAIN__STB_IMAGE_IMPLEMENTATION
+#define DONT_DEFINE_AGAIN__STB_IMAGE_RESIZE_IMPLEMENTATION
 //#define IMGUI_RADIO_BUTTON RadioButton
 //#define DisplayMode_ThumbailsList_ImageHeight 32.0f
 //#define tableHeaderFileThumbnailsString "Thumbnails"
-//#define DisplayMode_FilesList_ButtonString "FL"
+#define DisplayMode_ThumbailsList_ButtonString ICON_MD_IMAGE
 //#define DisplayMode_FilesList_ButtonHelp "File List"
-//#define DisplayMode_ThumbailsList_ButtonString "TL"
+#define DisplayMode_FilesList_ButtonString ICON_MD_LIST
 //#define DisplayMode_ThumbailsList_ButtonHelp "Thumbnails List"
-// todo
-//#define DisplayMode_ThumbailsGrid_ButtonString "TG"
-//#define DisplayMode_ThumbailsGrid_ButtonHelp "Thumbnails Grid"
+// sleep time in millisedonce to apply in the thread loop, when no datas to extract
+// the sleep time can be ssen jsut after the opening of a directory who contain pictures
+#define DisplayMode_ThumbailsGrid_ThreadSleepTimeInMS 50
 
 //#define USE_EXPLORATION_BY_KEYS
 // this mapping by default is for GLFW but you can use another
@@ -60,14 +62,14 @@
 //#define IMGUI_BUTTON ImGui::Button
 
 // locales string
-//#define createDirButtonString "+"
-//#define resetButtonString "R"
+#define createDirButtonString ICON_MD_CREATE_NEW_FOLDER
+#define resetButtonString ICON_MD_CLEAR
 //#define drivesButtonString "Drives"
-//#define editPathButtonString "E"
+#define editPathButtonString ICON_MD_EDIT
 //#define searchString "Search"
-//#define dirEntryString "[DIR] "
-//#define linkEntryString "[LINK] "
-//#define fileEntryString "[FILE] "
+#define dirEntryString " " ICON_MD_FOLDER
+#define linkEntryString " " ICON_MD_LINK
+#define fileEntryString " " ICON_MD_DESCRIPTION
 //#define fileNameString "File Name : "
 //#define dirNameString "Directory Path :"
 //#define buttonResetSearchString "Reset search"
@@ -93,20 +95,20 @@
 // see strftime functionin <ctime> for customize
 // "%Y/%m/%d %H:%M" give 2021:01:22 11:47
 // "%Y/%m/%d %i:%M%p" give 2021:01:22 11:45PM
-//#define DateTimeFormat "%Y/%m/%d %i:%M%p"
+#define DateTimeFormat "%Y/%m/%d %H:%M %p "
 
 // theses icons will appear in table headers
 //#define USE_CUSTOM_SORTING_ICON
 //#define tableHeaderAscendingIcon "A|"
 //#define tableHeaderDescendingIcon "D|"
-//#define tableHeaderFileNameString " File name"
-//#define tableHeaderFileTypeString " Type"
-//#define tableHeaderFileSizeString " Size"
-//#define tableHeaderFileDateTimeString " Date"
-//#define fileSizeBytes "o"
-//#define fileSizeKiloBytes "Ko"
-//#define fileSizeMegaBytes "Mo"
-//#define fileSizeGigaBytes "Go"
+#define tableHeaderFileNameString " File Name"
+#define tableHeaderFileTypeString "Type"
+#define tableHeaderFileSizeString "Size"
+#define tableHeaderFileDateString "Last Modified"
+#define fileSizeBytes "B"
+#define fileSizeKiloBytes "KB"
+#define fileSizeMegaBytes "MB"
+#define fileSizeGigaBytes "GB"
 
 // default table sort field (must be FIELD_FILENAME, FIELD_TYPE, FIELD_SIZE, FIELD_DATE or FIELD_THUMBNAILS)
 //#define defaultSortField FIELD_FILENAME
